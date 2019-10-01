@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>고양이와 함께</title>
+	<style type="text/css">
+		body{background: black;}
+		#warp{background: black; width: 1000px; height: 1000px; margin: auto;}
+		#rooom{position: absolute; margin-left: 100px; margin-top: 80px;}
+		#win{position: absolute; margin-left: 530px; margin-top: 164px;opacity: 0.3;}
+		#win2{position: absolute; margin-left: 530px; margin-top: 164px;opacity: 0;}
+		#b{position: absolute; margin-left: 289px; margin-top: 375px;}
+		#tower{position: absolute; margin-left: 675px; margin-top: 414px;opacity: 0.3;}
+		#cat1{position: absolute; margin-left: 450px; margin-top: 490px;opacity: 0.3;}
+		#cat2{position: absolute; margin-left: 420px; margin-top: 700px; opacity: 0.3;}
+		#fo{position: absolute; margin-left: 100px; margin-top: 544px;}
+		#ton{position: absolute; margin-left: 120px; margin-top: 520px; opacity: 0.3;}
+
+		@keyframes lo { 
+				to {transform: rotate(30deg);} from {transform: rotate(-30deg);}
+			}
+			@keyframes ro { 
+				to {transform: translateY(10%);}
+			} 
+
+	</style>
+</head>
+<body>
+	<div id="warp">
+	<img src="room.png" id="rooom">
+	<img src="window2.gif" id="win2">
+	<img src="window.png" id="win">
+	<img src="bed.png" id="b">	
+	<img src="cattower.png" id="tower">	
+	<img src="cat1.png" id="cat1">
+	<img src="cat2.png" id="cat2">
+	<img src="fofo.png" id="fo">
+	<img src="acton.png" id="ton">
+	</div>
+
+	<audio id="rain" 1oop>
+	  <source src="rain.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="anger">
+	  <source src="angercat.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="gol" loop>
+	  <source src="golgol.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="mew">
+	  <source src="meow.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="music" loop>
+	  <source src="Natural.mp3" type="audio/mpeg">
+	</audio>
+
+	<script type="text/javascript">
+		
+		var  astate = "off";
+		win.onclick = function(){
+			if (astate == "off") {
+				rain.play(); astate="on";
+				win.style.opacity = "0";
+				win2.style.opacity = "1";
+			}else{rain.pause(); astate="off";
+			win.style.opacity = "0.3"
+			win2.style.opacity = "0";
+			}
+		}
+
+		anger.volume = 0.5;
+		var  bstate = "off";
+		tower.onclick = function(){
+			if (bstate == "off") {
+				anger.play(); bstate="on";
+				tower.style.opacity = "1";
+				tower.style.animation = "lo 0.2s 0.5s linear alternate";
+			}else{anger.pause(); bstate="off";
+			tower.style.opacity = "0.3";
+			tower.style.animation = "none";
+			}
+		}
+
+	
+		var  cstate = "off";
+		cat1.onclick = function(){
+			if (cstate == "off") {
+				mew.play(); cstate="on";
+				cat1.style.opacity = "1";
+			}else{mew.pause(); cstate="off";
+			cat1.style.opacity = "0.3";
+			}
+		}
+
+
+			var  dstate = "off";
+		cat2.onclick = function(){
+			if (dstate == "off") {
+				gol.play(); dstate="on";
+				cat2.style.opacity = "1";
+				cat2.style.animation = "ro 1s linear alternate infinite";
+			}else{gol.pause(); dstate="off";
+			cat2.style.opacity = "0.3";
+			cat2.style.animation = "none";
+			}
+		}
+		music.volume = 0.2;
+		var  estate = "off";
+		ton.onclick = function(){
+			if (estate == "off") {
+				music.play(); estate="on";
+				ton.style.opacity = "1";
+			}else{music.pause(); estate="off";
+			ton.style.opacity = "0.3";
+			}
+		}
+
+
+	</script>
+</body>
+</html>
